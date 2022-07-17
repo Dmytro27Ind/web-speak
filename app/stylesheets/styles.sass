@@ -3,6 +3,10 @@ $main-width: 989px
 $page-width: 1225px
 $header-height: 68px
 
+$purple-light: #B8B5FF
+$purple: #7868E6
+$purple-dark: #5d50b4
+
 html, body, .wrapper
     height: 100%
 
@@ -63,7 +67,7 @@ body
             line-height: 22px
 
     .sidenav__element:hover
-        background: #B8B5FF
+        background: $purple-light
 
 .header
     height: $header-height
@@ -91,13 +95,23 @@ body
             border-radius: 34px
             border: 0px
             margin: 1px 1px
+            padding-left: 35px
+        input::placeholder
+            font-size: 14px
+            color: #ACB1C6
+        input:focus
+            outline: none
         .header__search-button
             width: 40px
             height: 40px
             border-radius: 20px
-            background: #7868E6
+            border: 0px
+            background: $purple
+            img
+                margin-top: 6px
+                margin-left: 3px
         .header__search-button:hover
-            background: #6859c6
+            background: $purple-dark
 
 .main
     width: $main-width
