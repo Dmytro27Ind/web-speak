@@ -1,20 +1,33 @@
+$sidenav-width: 236px
+
+html, body, .wrapper
+    height: 100%
+
+.wrapper
+    width: 1225px
+    margin: 0 auto
+    display: flex
+
 .sidenav
-    height: 100%;
-    width: 160px;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    padding-top: 20px;
+    height: 100%
+    width: $sidenav-width
+    background-color: #9c5555
+    overflow-x: hidden
+    padding-top: 10px
+    position: fixed
 
     a
-        padding: 6px 8px 6px 16px;
-        text-decoration: none;
-        font-size: 25px;
-        color: #818181;
-        display: block;
+        padding: 6px 8px 6px 16px
+        text-decoration: none
+        font-size: 25px
+        color: #818181
+        display: block
 
     a:hover
-        color: #f1f1f1;
+        color: #f1f1f1
+
+.main
+    width: 989px
+    background-color: #613636
+    height: 2000px
+    margin-left: $sidenav-width
