@@ -1,4 +1,7 @@
 $sidenav-width: 236px
+$main-width: 989px
+$page-width: 1225px
+$header-height: 68px
 
 html, body, .wrapper
     height: 100%
@@ -7,11 +10,11 @@ body
     font-family: 'Montserrat'
     font-style: normal
     font-weight: 400
+    // overflow-y: scroll
 
 .wrapper
-    width: 1225px
+    width: $page-width
     margin: 0 auto
-    display: flex
 
 .sidenav
     height: 100%
@@ -21,23 +24,13 @@ body
     padding-top: 10px
     position: fixed
 
-    a:first-of-type
-        margin-top: 80px
-
-    a
-        padding: 6px 8px 6px 16px
-        text-decoration: none
-        font-size: 25px
-        color: #818181
-        display: block
-
-    a:hover
-        color: #f1f1f1
-
     .sidenav__logo-container
         display: flex
+        margin-bottom: 70px
         .sidenav__logo
             margin-left: 5px
+            width: 39px
+            height: 43px
         .sidenav__title
             font-weight: 500
             font-size: 24px
@@ -46,8 +39,69 @@ body
             align-self: center
             margin-left: 20px
 
+    .sidenav__element
+        text-decoration: none
+        display: flex
+        align-items: center
+        margin-bottom: 30px
+        margin-left: 6px
+        width: 200px
+        height: 50px
+        border-radius: 10px
+        transition: 150ms ease-in-out
+        .sidenav__icon
+            width: 30px
+            height: 30px
+            margin-left: 20px
+        p
+            width: 105px
+            text-align: center
+            margin-left: 20px
+            font-size: 25px
+            color: #000000
+            font-size: 18px
+            line-height: 22px
+
+    .sidenav__element:hover
+        background: #B8B5FF
+
+.header
+    height: $header-height
+    width: $main-width
+    margin-left: $sidenav-width
+    background-color: #8f6868
+    position: fixed
+    overflow-x: hidden
+
+    .header__search-container
+        display: flex
+        justify-content: space-between
+        align-items: center
+        box-sizing: border-box
+        width: 520px
+        height: 40px
+        border: 1px solid #ACB1C6
+        border-right: 0px
+        border-radius: 34px
+        margin-top: 13px
+        background-color: #fff
+        input
+            width: 473px
+            height: 34px
+            border-radius: 34px
+            border: 0px
+            margin: 1px 1px
+        .header__search-button
+            width: 40px
+            height: 40px
+            border-radius: 20px
+            background: #7868E6
+        .header__search-button:hover
+            background: #6859c6
+
 .main
-    width: 989px
+    width: $main-width
     background-color: #613636
     height: 2000px
     margin-left: $sidenav-width
+    padding-top: $header-height
