@@ -26,6 +26,7 @@ export default class SearchHandler{
         this.$searchContainer.find(inputSelector).on('focus', (event) => {
             // console.log('focus')
             this.$searchContainer[0].style.border = "1px solid #7868E6"
+            this.$searchContainer[0].style.borderRight = "0px"
         })
         this.$searchContainer.find(inputSelector).on('focusout', (event) => {
             // console.log('focusout')

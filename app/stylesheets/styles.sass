@@ -6,6 +6,7 @@ $header-height: 68px
 $purple-light: #B8B5FF
 $purple: #7868E6
 $purple-dark: #5d50b4
+$grey-background: #F6F6FA
 
 html, body, .wrapper
     height: 100%
@@ -23,7 +24,7 @@ body
 .sidenav
     height: 100%
     width: $sidenav-width
-    background-color: #9c5555
+    background-color: #fff
     overflow-x: hidden
     padding-top: 10px
     position: fixed
@@ -70,52 +71,143 @@ body
         background: $purple-light
 
 .header
-    height: $header-height
+    height: $header-height + 125
     width: $main-width
     margin-left: $sidenav-width
-    background-color: #8f6868
     position: fixed
     overflow-x: hidden
 
-    .header__search-container
+    .header__content
+        height: $header-height
         display: flex
         justify-content: space-between
-        align-items: center
-        box-sizing: border-box
-        width: 520px
-        height: 40px
-        border: 1px solid #ACB1C6
-        border-right: 0px
-        border-radius: 34px
-        margin-top: 13px
         background-color: #fff
-        input
-            width: 473px
-            height: 34px
-            border-radius: 34px
-            border: 0px
-            margin: 1px 1px
-            padding-left: 35px
-        input::placeholder
-            font-size: 14px
-            color: #ACB1C6
-        input:focus
-            outline: none
-        .header__search-button
-            width: 40px
+        .header__search-container
+            display: flex
+            justify-content: space-between
+            align-items: center
+            box-sizing: border-box
+            width: 520px
             height: 40px
-            border-radius: 20px
+            border: 1px solid #ACB1C6
+            border-right: 0px
+            border-radius: 34px
+            margin-top: 13px
+            background-color: #fff
+            input
+                width: 473px
+                height: 34px
+                border-radius: 34px
+                border: 0px
+                margin: 1px 1px
+                padding-left: 35px
+            input::placeholder
+                font-size: 14px
+                color: #ACB1C6
+            input:focus
+                outline: none
+            .header__search-button
+                width: 40px
+                height: 40px
+                border-radius: 20px
+                border: 0px
+                background: $purple
+                img
+                    margin-top: 6px
+                    margin-left: 3px
+            .header__search-button:hover
+                background: $purple-dark
+
+        .header__profile
+            display: flex
+            align-self: center
+            height: 48px
             border: 0px
-            background: $purple
-            img
-                margin-top: 6px
-                margin-left: 3px
-        .header__search-button:hover
-            background: $purple-dark
+            background: none
+            padding: 0px 0px
+            border-radius: 10px
+            transition: 150ms ease-in-out
+            .header__profile-name
+                font-size: 18px
+                line-height: 22px
+                text-align: center
+                align-self: center
+                margin-right: 24px
+                margin-left: 24px
+            .header__profile-ava
+                border-radius: 12px
+                width: 42px
+                height: 42px
+                align-self: center
+                margin-right: 5px
+        .header__profile:hover
+            background: $purple-light
+
+.profile-popup
+    position: absolute
+    left: 772px
+    top:$header-height
+    width: 200px
+    height: 120px
+    opacity: 0
+    visibility: hidden
+    transition: 150ms ease-in-out
+    .profile-popup__body
+        width: 200px
+        height: 110px
+        background: $grey-background
+        border: 1px solid #D5D5D5
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1)
+        border-radius: 9px
+        margin-top: 10px
+    .profile-popup__body::after
+        content: ''
+        position: absolute
+        left: 90px
+        bottom: 110px
+        border: 10px solid transparent
+        border-bottom: 10px solid #D5D5D5
+    .profile-popup__element
+        text-decoration: none
+        display: flex
+        align-items: center
+        margin-top: 5px
+        margin-left: 10px
+        width: 180px
+        height: 50px
+        border-radius: 10px
+        transition: 150ms ease-in-out
+        .profile-popup__icon
+            width: 30px
+            height: 30px
+            margin-left: 10px
+        p
+            width: 105px
+            text-align: center
+            margin-left: 10px
+            font-size: 25px
+            color: #000000
+            font-size: 18px
+            line-height: 22px
+
+    .profile-popup__element:hover
+        background: $purple-light
+
+    .profile-popup__title
+        margin-top: 12px
+        font-size: 14px
+        line-height: 17px
+        text-align: center
+        color: #565656
+    .profile-popup__time
+        font-size: 16px
+        line-height: 20px
+        text-align: center
+        color: #000000
 
 .main
     width: $main-width
-    background-color: #613636
+    background-color: #4d4d4d
     height: 2000px
     margin-left: $sidenav-width
     padding-top: $header-height
