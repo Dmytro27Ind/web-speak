@@ -9,60 +9,13 @@
 </head>
 <body>
     <div class="wrapper">
+
         <!--* Side navigation -->
-        <div class="sidenav">
-            <div class="sidenav__logo-container">
-                <img src="./assets/small_logo.png" alt="web speak logo" class="sidenav__logo">
-                <h1 class="sidenav__title">Web Speak</h1>
-            </div>
-            <a href="#" class="sidenav__element">
-                <img src="./assets/nav_home.png" alt="home icon" class="sidenav__icon">
-                <p>Home</p>
-            </a>
-            <a href="#" class="sidenav__element">
-                <img src="./assets/nav_messages.png" alt="messages icon" class="sidenav__icon">
-                <p>Messages</p>
-            </a>
-            <a href="#" class="sidenav__element">
-                <img src="./assets/nav_profile.png" alt="profile icon" class="sidenav__icon">
-                <p>Profile</p>
-            </a>
-            <a href="#" class="sidenav__element">
-                <img src="./assets/nav_settings.png" alt="settings icon" class="sidenav__icon">
-                <p>Settings</p>
-            </a>
-            <a href="#" class="sidenav__element">
-                <img src="./assets/nav_logout.png" alt="logout icon" class="sidenav__icon">
-                <p>Logout</p>
-            </a>
-        </div>
+        <div class="sidenav" rel="js-sidenav"><!-- include sidenav-content.html --></div>
+
         <!--* Page header with searchbar and profile name with photo -->
-        <header class="header">
-            <div class="header__content">
-                <label class="header__search-container" rel="js-search-container">
-                    <input type="text" placeholder="Search here" value="" rel="js-search-input">
-                    <button class="header__search-button" rel="js-search-button">
-                        <img src="./assets/search-button_icon.png" alt="search icon">
-                    </button>
-                </label>
-                <button class="header__profile" rel="js-header-profile">
-                    <p class="header__profile-name">Dmytro Kagirov</p>
-                    <img src="./assets/profile_avatar.png" alt="profile ava" class="header__profile-ava">
-                </button>
-            </div>
-            <!--* Header popup  -->
-            <div class="profile-popup" rel="js-header-popup">
-                <div class="profile-popup__body">
-                    <p class="profile-popup__title">Active session time:</p>
-                    <p class="profile-popup__time">1 : 20 : 15</p>
-                    <a href="#" class="profile-popup__element">
-                        <img src="./assets/nav_logout.png" alt="logout icon" class="profile-popup__icon">
-                        <p>Logout</p>
-                    </a>
-                </div>
-                <div class="profile-popup__any-places" rel="js-popup-any-places"></div>
-            </div>
-        </header>
+        <header class="header" rel="js-header"><!-- include header-content.html --></header>
+
         <!--* Page content -->
         <div class="main">
 

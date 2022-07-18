@@ -6,6 +6,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const isDev = process.env.NODE_ENV === 'development'
 const isProd = !isDev
 
+
 module.exports = {
     mode: 'development',
     entry:{
@@ -29,10 +30,20 @@ module.exports = {
     plugins: [
         new CleanWebpackPlugin(),
         new HTMLWebpackPlugin({
-            template: path.resolve(__dirname,'app/index.html'),
+            template: path.resolve(__dirname, 'app/index.html'),
+        }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'app/templates/sidenav-content.html'),
+            filename: path.resolve(__dirname, 'dist/templates/sidenav-content.html'),
+            chunks: []
+        }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'app/templates/header-content.html'),
+            filename: path.resolve(__dirname, 'dist/templates/header-content.html'),
+            chunks: []
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].[contenthash].css'
+            filename: '[name].[contenthash].css',
         })
     ],
     module:{

@@ -5,6 +5,7 @@ import '@/stylesheets/styles.sass'
 import * as $ from 'jquery'
 import SearchHandler from './searchHandler.ts'
 import HeaderProfileHandler from './headerProfileHandler.ts'
+import fetchTemplates from './fetchTemplates.js'
 
 const searchSelector = '[rel="js-search-container"]'
 const inputSelector = '[rel="js-search-input"]'
@@ -13,10 +14,14 @@ const headerProfileSelector = '[rel="js-header-profile"]'
 const headerPopupSelector = '[rel="js-header-popup"]'
 const PopupAnyPlacesSelector = '[rel="js-popup-any-places"]'
 
-let searchHandler = new SearchHandler(searchSelector)
-let headerProfileHandler = new HeaderProfileHandler(headerProfileSelector)
+fetchTemplates().then((data) => {
+    console.log(data)
 
-searchHandler.addSubmitHandler((data) => {console.log(data)}, $(buttonSelector), $(inputSelector))
-searchHandler.addFocusHandler($(inputSelector))
-headerProfileHandler.addClickHandler($(headerPopupSelector))
-headerProfileHandler.addPopupHandler($(headerPopupSelector), $(PopupAnyPlacesSelector))
+    let searchHandler = new SearchHandler(searchSelector)
+    let headerProfileHandler = new HeaderProfileHandler(headerProfileSelector)
+
+    searchHandler.addSubmitHandler((data) => {console.log(data)}, $(buttonSelector), $(inputSelector))
+    searchHandler.addFocusHandler($(inputSelector))
+    headerProfileHandler.addClickHandler($(headerPopupSelector))
+    headerProfileHandler.addPopupHandler($(headerPopupSelector), $(PopupAnyPlacesSelector))
+})
