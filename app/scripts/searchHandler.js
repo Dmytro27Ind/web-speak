@@ -1,5 +1,8 @@
 import * as $ from 'jquery'
 
+const buttonSelector = '[rel="js-search-button"]'
+const inputSelector = '[rel="js-search-input"]'
+
 export default class SearchHandler{
     constructor(selector){
         if(!selector)
@@ -10,6 +13,19 @@ export default class SearchHandler{
     }
     addSubmitHandler(fn){
         console.log('Setting submit handler for search button')
-        console.log(this.$searchContainer)
+        this.$searchContainer.find(buttonSelector).on('click', (event) => {
+            fn(this.$searchContainer.find(inputSelector)[0].value)
+        })
+    }
+    addFocusHandler(){
+        console.log('Setting focus handler for search')
+        this.$searchContainer.find(inputSelector).on('focus', (event) => {
+            // console.log('focus')
+            this.$searchContainer[0].style.border = "1px solid #7868E6"
+        })
+        this.$searchContainer.find(inputSelector).on('focusout', (event) => {
+            // console.log('focusout')
+            this.$searchContainer[0].style = undefined
+        })
     }
 }

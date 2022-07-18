@@ -9,4 +9,5 @@ const searchSelector = '[rel="js-search-container"]'
 console.log("in index.js")
 
 let searchHandler = new SearchHandler(searchSelector)
-searchHandler.addSubmitHandler()
+searchHandler.addSubmitHandler((data) => {console.log(data)})
+searchHandler.addFocusHandler()
