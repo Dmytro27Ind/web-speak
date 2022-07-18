@@ -153,6 +153,8 @@ body
     visibility: hidden
     transition: 150ms ease-in-out
     .profile-popup__body
+        position: relative
+        z-index: 1
         width: 200px
         height: 110px
         background: $grey-background
@@ -204,6 +206,13 @@ body
         line-height: 20px
         text-align: center
         color: #000000
+
+    .profile-popup__any-places
+        position: fixed
+        left: 0px
+        top: 0px
+        width: 100%
+        height: 100%
 
 .main
     width: $main-width
