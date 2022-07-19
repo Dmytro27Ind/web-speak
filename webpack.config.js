@@ -10,7 +10,7 @@ const isProd = !isDev
 module.exports = {
     mode: 'development',
     entry:{
-        main: path.resolve(__dirname, 'app/scripts/index.js')
+        templates: path.resolve(__dirname, 'app/scripts/templates.js')
     },
     output:{
         filename: '[name].[contenthash].js',
@@ -31,6 +31,7 @@ module.exports = {
         new CleanWebpackPlugin(),
         new HTMLWebpackPlugin({
             template: path.resolve(__dirname, 'app/index.html'),
+            chunks: ['templates']
         }),
         new HTMLWebpackPlugin({
             template: path.resolve(__dirname, 'app/templates/sidenav-content.html'),
@@ -41,6 +42,16 @@ module.exports = {
             template: path.resolve(__dirname, 'app/templates/header-content.html'),
             filename: path.resolve(__dirname, 'dist/templates/header-content.html'),
             chunks: []
+        }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'app/pages/home.html'),
+            filename: path.resolve(__dirname, 'dist/pages/home.html'),
+            chunks: ['templates']
+        }),
+        new HTMLWebpackPlugin({
+            template: path.resolve(__dirname, 'app/pages/profile.html'),
+            filename: path.resolve(__dirname, 'dist/pages/profile.html'),
+            chunks: ['templates']
         }),
         new MiniCssExtractPlugin({
             filename: '[name].[contenthash].css',
