@@ -4,6 +4,7 @@ $sidenav-width: 236px
 $main-width: 989px
 $page-width: 1225px
 $header-height: 68px
+$search-bar-width: 520px
 
 $purple-light: #B8B5FF
 $purple: #7868E6
@@ -20,7 +21,7 @@ body
     // overflow-y: scroll
 
 .wrapper
-    width: $page-width
+    max-width: $page-width
     margin: 0 auto
 
 .sidenav
@@ -74,13 +75,17 @@ body
 
 .header
     height: $header-height + 125
-    width: $main-width
     margin-left: $sidenav-width
     position: fixed
-    overflow-x: hidden
+    overflow: hidden
+    top: 0px
+    right: 0px
+    left: 0px
 
     .header__content
+        max-width: $main-width
         height: $header-height
+        margin: 0 auto
         display: flex
         justify-content: space-between
         background-color: #fff
@@ -89,7 +94,7 @@ body
             justify-content: space-between
             align-items: center
             box-sizing: border-box
-            width: 520px
+            width: $search-bar-width
             height: 40px
             border: 1px solid #ACB1C6
             border-right: 0px
@@ -122,6 +127,7 @@ body
 
         .header__profile
             display: flex
+            max-width: 300px
             align-self: center
             height: 48px
             border: 0px
@@ -146,14 +152,21 @@ body
             background: $purple-light
 
 .profile-popup
-    position: absolute
-    left: 772px
+    // position: absolute
+    // right: 0px
+    display: flex
+    justify-content: space-between
     top:$header-height
-    width: 200px
+    max-width: $main-width
     height: 120px
+    margin: 0 auto
     opacity: 0
     visibility: hidden
     transition: 150ms ease-in-out
+
+    .profile-popup__space
+        min-width: $search-bar-width
+
     .profile-popup__body
         position: relative
         z-index: 1
@@ -164,6 +177,7 @@ body
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1)
         border-radius: 9px
         margin-top: 10px
+        margin-right: 10px
     .profile-popup__body::after
         content: ''
         position: absolute
