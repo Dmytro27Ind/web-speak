@@ -1,0 +1,131 @@
+@use './variables'
+
+.profile-header
+    position: relative
+    max-width: variables.$main-width - 5
+    height: 307px
+    margin-right: 5px
+    background-image: url('../assets/profile-header_bg.jpg')
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1)
+    border-radius: 10px
+
+    .profile-header__ava
+        position: absolute
+        top: 112px
+        left: 50px
+        z-index: 1
+        box-sizing: border-box
+        width: 140px
+        height: 140px
+        border: 1px solid variables.$grey-button-border
+        border-radius: 102px
+
+    .profile-header__button
+        position: absolute
+        top: 165px
+        right: 30px
+        z-index: 1
+        width: 145px
+        height: 30px
+        padding: 0px 0px
+        display: flex
+        justify-content: space-evenly
+        align-items: center
+        background: variables.$grey-button-bg
+        border-radius: 10px
+        box-sizing: border-box
+        border: 1px solid variables.$grey-button-border
+        span
+            font-size: 14px
+            line-height: 17px
+    .profile-header__button:hover
+        background: variables.$grey-button-bg-hover
+
+    .profile-header__info
+        background-color: variables.$grey-background
+        max-width: variables.$main-width - 5
+        width: 100%
+        height: 87px
+        display: flex
+        position: absolute
+        bottom: 0px
+        .profile-header__name
+            max-width: 250px
+            margin: 45px 85px 0px 50px
+            font-weight: 500
+            font-size: 18px
+            line-height: 22px
+        .profile-header__followers
+            max-width: 180px
+            margin-right: 65px
+            margin-top: 47px
+            display: flex
+        .profile-header__following
+            max-width: 180px
+            margin-top: 47px
+            display: flex
+        h2
+            font-weight: 500
+            font-size: 16px
+            line-height: 20px
+            margin-right: 10px
+        span
+            font-size: 14px
+            line-height: 17px
+            color: #565656
+
+@media (max-width: 1090px)
+    .main .profile-header .profile-header__info
+        .profile-header__name
+            margin: 45px 30px 0px 20px
+        .profile-header__followers
+            margin-right: 30px
+
+@media (max-width: 790px)
+    .main .profile-header
+        .profile-header__ava
+            top: 90px
+            left: 25px
+        .profile-header__button
+            top: 175px
+            right: 15px
+        .profile-header__info
+            flex-wrap: wrap
+            .profile-header__name
+                margin-top: 15px
+                max-width: 100%
+                width: 100%
+            .profile-header__followers
+                margin-top: 0px
+                margin-left: 20px
+            .profile-header__following
+                margin-top: 0px
+
+@media (max-width: 425px)
+    .main .profile-header
+        height: 267px
+        .profile-header__ava
+            width: 100px
+            height: 100px
+            top: 70px
+        .profile-header__button
+            top: 115px
+            width: 50px
+            span
+                display: none
+        .profile-header__button:hover
+            background: variables.$grey-button-bg-hover
+        .profile-header__info
+            height: 107px
+            .profile-header__name
+                font-size: 16px
+            h2
+                font-size: 14px
+            span
+                font-size: 13px
+            .profile-header__followers
+                margin-left: 20px
+                max-width: 100%
+                width: 100%
+            .profile-header__following
+                margin-left: 20px
