@@ -1,6 +1,3 @@
-import 'normalize.css'
-import 'reset-css'
-import '@/stylesheets/styles.sass'
 import * as $ from 'jquery'
 import SearchHandler from './searchHandler.ts'
 import HeaderProfileHandler from './headerProfileHandler.ts'
