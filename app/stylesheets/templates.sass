@@ -346,6 +346,21 @@ body
             .sidenav__icon
                 margin-left: auto
                 margin-right: auto
+        .sidenav__toggle-switch
+            width: 46px
+            height: 23px
+            label
+                height: 23px
+                border-radius: 23px
+            .slider
+                border-radius: 11px
+            .slider::before
+                top: 3px
+                left: 4px
+                width: 17px
+                height: 17px
+            input:checked ~ .slider::before
+                transform: translateX(21px)
     .header
         .header__content
             .header__logo-container
@@ -419,6 +434,7 @@ body
         bottom: 0px
         width: 100%
         height: 35px
+        margin-top: 0px
         padding: 5px 0px
         display: flex
         flex-direction: row
@@ -442,10 +458,12 @@ body
         .element-6
             display: flex
             order: 1
+        .sidenav__switch-container
+            display: none
 
-@media (max-height: 750px)
+@media (max-height: 750px) and (orientation: landscape)
     .sidenav
         height: 50%
-@media (max-height: 600px)
+@media (max-height: 600px) and (orientation: landscape)
     .sidenav
         height: 60%
