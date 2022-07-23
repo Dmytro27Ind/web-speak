@@ -9,6 +9,7 @@ export default class SwitchThemeHandler{
         this.$checkboxSwitch = $(selector)
         if(this.$checkboxSwitch.length === 0)
             throw new Error('Could not find element with selector: ' + selector)
+
         //* default theme color
         if (this.#getTheme() == undefined){
             document.documentElement.className = 'light'
