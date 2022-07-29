@@ -194,7 +194,7 @@
             width: 110px
             display: flex
             align-items: center
-            background: var(--purple-light)
+            background: #c1bdff
             border-radius: 10px
             border: 0px
             box-sizing: border-box
@@ -238,6 +238,7 @@
                         font-size: 15px
                         line-height: 18px
                         color: var(--text-color)
+                        text-decoration: none
                     .post__date
                         margin-top: 3px
                         font-weight: 500
@@ -248,7 +249,7 @@
                 margin-top: 10px
                 margin-bottom: 20px
                 font-weight: 400
-                font-size: 14px
+                font-size: 15px
                 line-height: 17px
                 color: var(--text-color)
             .post__img
@@ -261,6 +262,7 @@
                 .post__reaction
                     display: flex
                     align-content: center
+                    text-decoration: none
                     img
                         filter: var(--grey-icon-filter)
                     span
@@ -269,6 +271,21 @@
                         font-size: 14px
                         line-height: 17px
                         color: var(--text-color-grey)
+                .post__comment:hover
+                    img
+                        filter: variables.$light-blue-icon-filter
+                    span
+                        color: variables.$light-blue
+                .post__repost:hover
+                    img
+                        filter: variables.$light-green-icon-filter
+                    span
+                        color: variables.$light-green
+                .post__like:hover
+                    img
+                        filter: variables.$light-red-icon-filter
+                    span
+                        color: variables.$light-red
 
     .trends
         width: 222px
