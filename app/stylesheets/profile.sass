@@ -93,39 +93,42 @@
     margin-top: 15px
     padding: 10px 10px
     box-sizing: border-box
-    .profile__info
-        width: 250px
-        padding: 15px 30px
-        background: var(--app-bg)
-        box-shadow: var(--container-shadow)
-        border-radius: 10px
-        box-sizing: border-box
-        .stat__container:not(:first-child)
-            margin-top: 10px
-        .stat__container
-            display: flex
-            align-items: center
-            span
-                margin-left: 25px
+    .profile__info-container
+        display: flex
+        width: 100%
+        .profile__info
+            width: 250px
+            padding: 15px 30px
+            background: var(--app-bg)
+            box-shadow: var(--container-shadow)
+            border-radius: 10px
+            box-sizing: border-box
+            .stat__container:not(:first-child)
+                margin-top: 10px
+            .stat__container
+                display: flex
+                align-items: center
+                span
+                    margin-left: 25px
+                    font-size: 14px
+                    line-height: 17px
+                    color: var(--text-color)
+                img
+                    filter: var(--grey-icon-filter)
+
+            .profile__edit-button
+                height: 29px
+                width: 170px
+                border: 0px
+                margin-top: 15px
+                background: var(--button-bg)
+                border-radius: 10px
                 font-size: 14px
                 line-height: 17px
+                text-align: center
                 color: var(--text-color)
-            img
-                filter: var(--grey-icon-filter)
-
-        .profile__edit-button
-            height: 29px
-            width: 170px
-            border: 0px
-            margin-top: 15px
-            background: var(--button-bg)
-            border-radius: 10px
-            font-size: 14px
-            line-height: 17px
-            text-align: center
-            color: var(--text-color)
-        .profile__edit-button:hover
-            background: var(--button-bg-hover)
+            .profile__edit-button:hover
+                background: var(--button-bg-hover)
 
     .profile__new-post
         position: relative
@@ -204,6 +207,73 @@
         .new-post__post-button:hover
             background: #e9e8ff
 
+    .profile__posts
+        display: flex
+        flex-direction: column
+        max-width: 728px
+        width: 100%
+        .post-container
+            background: var(--app-bg)
+            box-shadow: var(--container-shadow)
+            border-radius: 10px
+            margin-top: 10px
+            padding: 20px 25px 15px 25px
+        .post
+            .post__header
+                display: flex
+                img
+                    box-sizing: border-box
+                    width: 50px
+                    height: 50px
+                    border: 1px solid var(--button-bg)
+                    border-radius: 102px
+                .post__info
+                    margin-left: 25px
+                    height: 50px
+                    display: flex
+                    flex-direction: column
+                    justify-content: center
+                    .post__author
+                        font-weight: 500
+                        font-size: 15px
+                        line-height: 18px
+                        color: var(--text-color)
+                    .post__date
+                        margin-top: 3px
+                        font-weight: 500
+                        font-size: 12px
+                        line-height: 15px
+                        color: var(--text-color-grey)
+            .post__text
+                margin-top: 10px
+                margin-bottom: 20px
+                font-weight: 400
+                font-size: 14px
+                line-height: 17px
+                color: var(--text-color)
+            .post__img
+                width: 100%
+                border-radius: 5px
+            .post__reaction-container
+                display: flex
+                justify-content: space-around
+                margin-top: 16px
+                .post__reaction
+                    display: flex
+                    align-content: center
+                    img
+                        filter: var(--grey-icon-filter)
+                    span
+                        margin-left: 15px
+                        font-weight: 500
+                        font-size: 14px
+                        line-height: 17px
+                        color: var(--text-color-grey)
+
+    .trends
+        width: 222px
+        height: 200px
+
 
 @media (max-width: 1090px)
     .main .profile-header .profile-header__info
@@ -248,7 +318,7 @@
                 display: none
 
 @media (max-width: 685px)
-    .main .profile__body
+    .main .profile__body .profile__info-container
         flex-wrap: wrap
         .profile__info
             width: 100%

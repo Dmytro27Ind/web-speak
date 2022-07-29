@@ -7,6 +7,7 @@ import SwitchThemeHandler from './switchThemeHandler.ts'
 const searchSelector = '[rel="js-search-container"]'
 const inputSelector = '[rel="js-search-input"]'
 const buttonSelector = '[rel="js-search-button"]'
+const headerSelector = '[rel="js-header"]'
 const headerProfileSelector = '[rel="js-header-profile"]'
 const headerPopupSelector = '[rel="js-header-popup"]'
 const PopupAnyPlacesSelector = '[rel="js-popup-any-places"]'
@@ -21,7 +22,7 @@ fetchTemplates().then((data) => {
 
     searchHandler.addSubmitHandler((data) => {console.log(data)}, $(buttonSelector), $(inputSelector))
     searchHandler.addFocusHandler($(inputSelector))
-    headerProfileHandler.addClickHandler($(headerPopupSelector))
-    headerProfileHandler.addPopupHandler($(headerPopupSelector), $(PopupAnyPlacesSelector))
+    headerProfileHandler.addClickHandler($(headerPopupSelector), $(headerSelector))
+    headerProfileHandler.addPopupHandler($(headerPopupSelector), $(PopupAnyPlacesSelector), $(headerSelector))
     switchThemeHandler.addClickHandler()
 })
