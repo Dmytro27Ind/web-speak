@@ -288,8 +288,46 @@
                         color: variables.$light-red
 
     .trends
+        position: sticky
+        top: variables.$header-height + 5
         width: 222px
-        height: 200px
+        height: 100%
+        margin-top: 10px
+        margin-left: 14px
+        padding: 20px 30px
+        box-sizing: border-box
+        background: var(--app-bg)
+        box-shadow: var(--container-shadow)
+        border-radius: 10px
+        .title
+            font-weight: 500
+            font-size: 16px
+            line-height: 20px
+            color: var(--text-color)
+            margin-bottom: 25px
+        .trends__list
+            .trends__item + .trends__item
+                margin-top: 20px
+            .trends__item
+                max-width: 162px
+                .trends__hashtag
+                    display: block
+                    white-space: nowrap
+                    overflow: hidden
+                    text-overflow: ellipsis
+                    text-decoration: none
+                    font-weight: 500
+                    font-size: 14px
+                    line-height: 17px
+                    color: var(--text-color)
+                span
+                    display: block
+                    white-space: nowrap
+                    margin-top: 5px
+                    font-weight: 500
+                    font-size: 13px
+                    line-height: 16px
+                    color: var(--text-color-grey)
 
 
 @media (max-width: 1090px)
@@ -347,3 +385,29 @@
         .profile__posts .post-container
             padding-left: 10px
             padding-right: 10px
+
+@media (max-width: 1238px)
+    .main .profile__body
+        justify-content: space-around
+        .profile__info-container
+            order: 1
+        .trends
+            width: 100%
+            margin-left: 0px
+            order: 2
+            position: relative
+            top: 0px
+            .trends__list
+                display: flex
+                flex-wrap: wrap
+                justify-content: space-evenly
+                column-gap: 15px
+                row-gap: 15px
+                .trends__item
+                    margin-top: 0px
+        .profile__posts
+            order: 3
+
+@media (max-width: 510px)
+    .main .profile__body .trends .trends__list
+            justify-content: flex-start
