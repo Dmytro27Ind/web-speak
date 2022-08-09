@@ -7,6 +7,7 @@ CREATE TABLE EMP(
     emp_name varchar(50),
     emp_addres TEXT
 );
+-- DROP TABLE EMP;
 
 INSERT INTO EMP(emp_id, emp_name, emp_addres) VALUES
     (1, 'Dima', 'Jedlikova 5');
